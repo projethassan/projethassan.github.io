@@ -1,0 +1,464 @@
+@import url(assets/css/fonts.css);
+@import url(assets/css/fontawesome.css);
+
+:root {
+	--theme-transition-global: background-color .2s, color .2s;
+}
+
+body { 
+	font-family: Gravity;
+	line-height: 1.4em;
+	font-size: 1em;
+	color: #1f222a;
+	padding: 50px ;
+	scroll-behavior: smooth;
+	transition: var(--theme-transition-global);
+	user-select: none;
+}
+
+body[darkMode] {
+	background-color: #1f222a;
+	color: white;
+}
+
+img {
+	pointer-events: none;
+}
+
+/*
+ =============== TITRES H1 ===============
+*/
+
+body h1 {
+	width: fit-content;
+	color: #333a4f;
+	border-bottom: #325bcd00 solid 3px;
+	transition: color .2s, border-bottom .2s;
+	cursor: pointer;
+	transition: var(--theme-transition-global);
+}
+
+body h1:nth-child(1) {
+	margin-top: 160px;
+}
+
+body[darkMode] h1 {
+	color: #ffffff;
+	border-bottom: #ffffff00 solid 3px;
+}
+
+body h1:hover {
+	color: #3b66dc;
+	border-bottom: #3b66dc solid 3px;
+}
+
+body h1:before {
+	color: #7e849500;
+	position: absolute;
+	display: block;
+	font-size: 2rem;
+	content: '#';
+	transform: translate(-30px, 0px);
+	transition: color .2s;
+}
+
+body h1:hover:before {
+	color: #7e8495;
+}
+
+body[darkMode] h1:hover:before {
+	color: #535762;
+}
+
+h1 ~ h1 {
+	margin-top: 50px;
+}
+
+
+
+/*
+ =============== LISTES UL ===============
+*/
+
+body ul {
+	list-style-type: "> ";
+	animation: glitchUl 1s infinite;
+}
+
+/*
+ =============== CARTES ===============
+*/
+
+body div:has(> #teamCards), body div:has(> #projectsCards){
+	text-align: center;
+	width: 100%;
+	display: block;
+}
+
+body #teamCards, body #projectsCards{
+	display: inline-flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	width: fit-content;
+	height: fit-content;
+	gap: 20px;
+	padding: 20px;
+	text-align: left;
+	/* box-shadow: 0px 0px 16px 3px #888888ff inset; */
+	font-size: 1.1em;
+	transition: background-color .3s;
+}
+
+body #teamCards {
+	border-radius: 72px;
+	background-color: #e0e0e0;
+}
+
+body[darkMode] #teamCards {
+	background-color: #2a303e;
+}
+
+body:not([darkMode]) #projectsCards {
+	background-color: #e0e0e0;
+}
+
+body #projectsCards {
+	border-radius: 20px;
+	flex-direction: column;
+	flex-wrap: nowrap;
+}
+
+body #teamCards > div.card, body #projectsCards > div.card {
+	min-width: 300px;
+	width: fit-content;
+	min-height: 80px;
+	border-radius: 52px;
+	padding: 10px;
+	display: flex;
+	flex: 1 0 30%;
+	/* box-shadow: 0px 0px 16px 3px #888888ff; */
+	transition: background-color .3s, border .3s, color .3s;
+}
+
+body #teamCards > div.card {
+	background-color: #ffffff;
+}
+
+body[darkMode] #teamCards > div.card {
+	background-color: #1f222a;
+}
+
+body #projectsCards > div.card {
+	padding: 13px;
+	border-radius: 18px;
+	background-color: #ffffff;
+	width: auto;
+}
+
+body[darkMode] #projectsCards > div.card {
+	background-color: #2a303e;
+}
+
+body #teamCards > div.card > img, body #projectsCards > div.card > img {
+	width: 80px;
+	height: 80px;
+	object-fit: cover;
+	border-radius: 40px;
+}
+
+body #projectsCards > div.card > img {
+	border-radius: 10px;
+}
+
+body #teamCards > div.card > div.description, body #projectsCards > div.card > div.description {
+	width: 100%;
+	height: 100%;
+	margin: auto 20px;
+	display: inline-flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+body #projectsCards > div.card > div.description {
+	margin: auto 10px;
+}
+
+body #teamCards > div.card > div.description > span.title, body #projectsCards > div.card > div.description > span.title {
+	font-weight: bold;
+	font-size: 1.2em;
+	display: inline-block;
+	width: fit-content;
+	margin-bottom: 8px;
+}
+
+/*
+ =============== CARTES >>> TAGS ===============
+*/
+
+body #projectsCards > div.card span.tags {
+	display: inline-block;
+	font-weight: normal;
+	font-size: 0.7em;
+	width: fit-content;
+	padding: 2px 7px;
+	margin-left: 5px;
+	border-radius: 7px;
+	vertical-align: 0.2em;
+	color: white;
+	opacity: 0.7;
+}
+
+body #projectsCards>div.card span.tags::before {
+	font-family: fab, fas, fa;
+	margin-right: 5px;
+	font-size: 0.8em;
+}
+
+/*
+ --- TAGS : WINDOWS ---
+*/
+
+body #projectsCards>div.card span.tags.windows {
+	background: rgb(19, 63, 124);
+}
+
+body #projectsCards>div.card span.tags.windows::before {
+	content: "\f17a";
+}
+
+/*
+ --- TAGS : ANDROID ---
+*/
+
+body #projectsCards>div.card span.tags.android {
+	background: rgb(29, 124, 19);
+}
+
+body #projectsCards>div.card span.tags.android::before {
+	content: "\f17b";
+}
+
+/*
+ --- TAGS : UNPUBLISHED ---
+*/
+
+body #projectsCards>div.card span.tags.unpublished {
+	background: rgb(124, 19, 19);
+}
+
+body #projectsCards>div.card span.tags.unpublished::before {
+	content: "\f070";
+}
+
+/*
+ --- TAGS : DEV ---
+*/
+
+body #projectsCards>div.card span.tags.dev {
+	background: rgb(124, 110, 15);
+}
+
+body #projectsCards>div.card span.tags.dev::before {
+	content: "\f0ad";
+}
+
+/*
+ --- TAGS : done ---
+*/
+
+body #projectsCards>div.card span.tags.done {
+	background: rgb(6, 148, 32);
+}
+
+body #projectsCards>div.card span.tags.done::before {
+	content: "\f00c";
+}
+
+/*
+ =============== CARDS >>> EVENTS ===============
+*/
+
+body #projectsCards > div.card {
+	background-color: #ffffff;
+	background-size: 300%;
+	background-position: 99% 50%;
+	transition: background-position 1s, color .5s;
+	--cardColor: #7a9eff;
+}
+
+body[darkMode] #projectsCards > div.card {
+	background-color: #2a303e;
+}
+
+/*
+bleu : #7a9eff
+rouge : #ff7a7a
+*/
+
+body #projectsCards>div.card:not([disabled]) {
+	background-image: linear-gradient(125deg, var(--cardColor) 0%, var(--cardColor) 45%, #c7c6c2 50%, #ffffff 55%, #ffffff 100%);
+}
+
+body #projectsCards>div.card[disabled] {
+	background-image: linear-gradient(125deg, #ff7a7a 0%, #ff7a7a 45%, #c7c6c2 50%, #ffffff 55%, #ffffff 100%);
+}
+
+body[darkMode] #projectsCards>div.card:not([disabled]) {
+	background-image: linear-gradient(125deg, var(--cardColor) 0%, var(--cardColor) 45%, #cccccc 50%, #2a303e 55%, #2a303e 100%);
+}
+
+body[darkMode] #projectsCards>div.card[disabled] {
+	background-image: linear-gradient(125deg, #ff7a7a 0%, #ff7a7a 45%, #cccccc 50%, #2a303e 55%, #2a303e 100%);
+}
+
+body #projectsCards > div.card:not([disabled]):hover {
+	background-color: var(--cardColor);
+	color: white;
+	cursor: pointer;
+	background-image: linear-gradient(125deg, var(--cardColor) 0%, var(--cardColor) 45%, #c7c6c2 50%, #ffffff 55%, #ffffff 100%);
+	background-position: 1% 50%;
+}
+
+body[darkMode] #projectsCards > div.card:not([disabled]):hover {
+	background-image: linear-gradient(125deg, var(--cardColor) 0%, var(--cardColor) 45%, #cccccc 50%, #2a303e 55%, #2a303e 100%);
+}
+
+body #projectsCards > div.card[disabled]:hover {
+	background-color: #ff7a7a;
+	color: white;
+	background-image: linear-gradient(125deg, #ff7a7a 0%, #ff7a7a 45%, #c7c6c2 50%, #ffffff 55%, #ffffff 100%);
+	background-position: 1% 50%;
+}
+
+body[darkMode] #projectsCards > div.card[disabled]:hover {
+	background-image: linear-gradient(125deg, #ff7a7a 0%, #ff7a7a 45%, #cccccc 50%, #2a303e 55%, #2a303e 100%);
+}
+
+/*
+ =============== SWITCH THEME ===============
+*/
+
+body div#themeChanger {
+	display: block;
+	position: absolute;
+	top: calc(max(7.5vw, 100px) / 6.1 + 15px);
+	right: calc(max(7.5vw, 100px) / 6.1);
+	width: 60px;
+	height: 30px;
+	border-radius: 20px;
+	cursor: pointer;
+	box-shadow: 0px 0px 5px 3px #88888866 inset;
+	background-color: #cdcdcd;
+}
+
+body[darkMode] div#themeChanger {
+	background-color: #1f222a;
+}
+
+body div#themeChanger div {
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 20px;
+	height: 20px;
+	background-color: #ffffff;
+	border-radius: 20px;
+	box-shadow: 0px 0px 5px 3px #ffffff88;
+	transition: left .3s, background-color .3s, box-shadow .3s;
+}
+
+body[darkMode] div#themeChanger > div {
+	left: 35px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #8888;
+	border-radius: 5px;
+}
+
+/*
+
+=============== TOP BAR ===============
+
+*/
+body #head .bar {
+	position: fixed;
+	display: block;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: calc(15vw / 6.1 + 60px);	
+	min-height: calc(200px / 6.1 + 60px);
+	background-color: #08090900;
+	transition: background-color .7s;
+}
+
+body #head img {
+	position: fixed;
+	top: 80px;
+	width: 30vw;
+	min-width: 200px;
+	left: 50vw;
+	transform: translate(-50%, 0px);
+	filter: invert(0);
+	transition: width .7s, top .7s, filter .3s;
+}
+
+body:not([darkMode]) #head img {
+	filter: invert(.8);
+}
+
+body:not([scroll='0']) #head img {
+	top: 30px;
+	width: 15vw;
+	min-width: 140px;
+}
+
+body:not([scroll='0']) #head .bar {
+	background-color: #ccd2debb;
+}
+
+body[darkMode]:not([scroll='0']) #head .bar {
+	background-color: #080909bb;
+}
+
+/*
+ =============== TRANSITION ===============
+*/
+
+@keyframes transition {
+	0% {
+		width: 10px;
+		height: 10px;
+		top: calc(50vh - 5px);
+		left: calc(50vw - 5px);
+	}
+	50% {
+		width: 10px;
+		height: 100vh;
+		top: 0px;
+		left: calc(50vw - 5px);
+	}
+	100% {
+		width: 100vw;
+		height: 100vh;
+		top: 0px;
+		left: 0px;
+	}
+}
+
+#transition {
+	display: block;
+	position: fixed;
+	z-index: 100;
+	background-color: #43495b;
+	animation: transition .7s reverse;
+	width: 0px;
+	height: 0px;
+}

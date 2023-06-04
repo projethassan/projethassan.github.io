@@ -1,0 +1,26 @@
+@import url("../more/fontawesome/css/all.min.css");
+@import url("../more/fontawesome/css/brands.min.css");
+@import url("../more/fontawesome/css/fontawesome.min.css");
+@import url("../more/fontawesome/css/regular.min.css");
+@import url("../more/fontawesome/css/solid.min.css");
+@import url("../more/fontawesome/css/svg-with-js.min.css");
+@import url("../more/fontawesome/css/v4-font-face.min.css");
+@import url("../more/fontawesome/css/v4-shims.min.css");
+@import url("../more/fontawesome/css/v5-font-face.min.css");
+
+@font-face {
+	font-family: fab;
+	src: url(../more/fontawesome/webfonts/fa-brands-400.ttf);
+}
+@font-face {
+	font-family: fa;
+	src: url(../more/fontawesome/webfonts/fa-regular-400.ttf);
+}
+@font-face {
+	font-family: fas;
+	src: url(../more/fontawesome/webfonts/fa-solid-900.ttf);
+}
+@font-face {
+	font-family: fa4;
+	src: url(../more/fontawesome/webfonts/fa-v4compatibility.ttf);
+}
