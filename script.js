@@ -43,11 +43,30 @@ document.addEventListener("readystatechange", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+	document.addEventListener("click", function (ev) {
+		console.log(ev.target.tagName)
+		if (ev.target.classList.contains("out-link") || (ev.target.tagName == "A" && ev.target.hasAttribute("href"))) {
+			ev.preventDefault();
+			document.getElementById("transition").setAttribute("hidden", "false");
+			let newWindow = false;
+			
+			if (newWindow) {
+				window.open(ev.target.getAttribute("href"));
+			} else {
+				setTimeout(function () {
+					location.href = ev.target.getAttribute("href");
+				}, 700);
+			}
+		}
+	})
+
+
 	document.getElementById("themeChanger").onclick = function () {
 		document.body.toggleAttribute("darkMode")
 		localStorage.setItem("theme", (document.body.hasAttribute("darkMode") ? "dark" : "light"))
 	}
 
+	
 	document.querySelectorAll("h1").forEach(function (el) {
 		el.onclick = function () {
 			
@@ -58,4 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			copyText(url.toString());
 		}
 	})
+
+	setTimeout(function () {
+		document.getElementById("transition").setAttribute("hidden", "true");
+	}, 500);
 })
