@@ -448,7 +448,7 @@ body #head img {
 	left: 50vw;
 	transform: translate(-50%, 0px);
 	filter: invert(0);
-	transition: width .7s, top .7s, filter .3s;
+	transition: width .7s, top .7s, filter .3s, min-width .7s;
 }
 
 body:not([darkMode]) #head img {
