@@ -431,6 +431,14 @@ body #head .bar {
 	transition: background-color .7s;
 }
 
+body #head {
+	z-index: 15;
+}
+
+body #head > * {
+	z-index: 16;
+}
+
 body #head img {
 	position: fixed;
 	top: 80px;
