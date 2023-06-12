@@ -20,7 +20,9 @@
 	font-weight: bold;
 	font-style: italic;
 	src: url(../fonts/AnonymousPro-BoldItalic.ttf);
-}@font-face {
+}
+
+@font-face {
 	font-family: 'Gravity';
 	font-weight: bold;
 	src: url(../fonts/Gravity-Bold.otf);

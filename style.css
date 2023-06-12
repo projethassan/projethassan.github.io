@@ -11,10 +11,16 @@ body {
 	line-height: 1.4em;
 	font-size: 1em;
 	color: #1f222a;
-	padding: 50px ;
+	padding: 50px;
 	scroll-behavior: smooth;
 	transition: var(--theme-transition-global);
 	user-select: none;
+}
+
+@media only screen and (max-width: 600px) {
+	body {
+		padding: 10px;
+	}
 }
 
 body[darkMode] {
