@@ -17,7 +17,7 @@ body {
 	user-select: none;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 767px) {
 	body {
 		padding: 10px;
 	}
@@ -125,6 +125,14 @@ body #teamCards, body #projectsCards{
 	transition: var(--theme-transition-global);
 }
 
+@media only screen and (max-width: 767px) {
+	body #teamCards, body #projectsCards{
+		gap: 10px;
+		padding: 10px;
+		font-size: 1em;
+	}
+}
+
 body #teamCards {
 	border-radius: 72px;
 	background-color: #e0e0e0;
@@ -184,6 +192,15 @@ body #teamCards > div.card > img, body #projectsCards > div.card > img {
 
 body #projectsCards > div.card > img {
 	border-radius: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+
+	body #projectsCards > div.card > img {
+		width: 60px;
+		height: 60px;
+		border-radius: 8px;
+	}
 }
 
 body #teamCards > div.card > div.description, body #projectsCards > div.card > div.description {
